@@ -28,10 +28,55 @@ const game = ()=>{
                 //computer choice
                 const computerNumber = Math.floor(Math.random()*3);
                 const computerChoice = computerOptions[computerNumber];
+
+                //update images
+                playerHand.src = `./assets/${this.textContent}.png`;
+                computerHand.src =`./assets/${this.textContent}.png`;
             })
         })
         
         
+    }
+
+    const compareHands = (playerChoice, computerChoice) =>{
+        const winner = document.querySelector('.winner');
+        if(playerChoice === computerChoice){
+            winner.textContent = 'It is a tie';
+            return;
+        }
+
+        if(playerChoice === 'rock'){
+            if(computerChoice === 'scissors'){
+                winner.textContent = 'Player Wins';
+                return;
+            }
+            else{
+                winner.textContent = 'Computer wins';
+                return;
+            }
+        }
+
+        if(playerChoice === 'paper'){
+            if(computerChoice === 'scissors'){
+                winner.textContent = 'Computer Wins';
+                return;
+            }
+            else{
+                winner.textContent = 'Player wins';
+                return;
+            }
+        }
+
+        if(playerChoice === 'scissors'){
+            if(computerChoice === 'rock'){
+                winner.textContent = 'Computer Wins';
+                return;
+            }
+            else{
+                winner.textContent = 'Player wins';
+                return;
+            }
+        }
     }
     //Is call all the inner function
     startGame();
