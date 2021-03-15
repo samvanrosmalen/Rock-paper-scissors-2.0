@@ -21,17 +21,17 @@ const game = ()=>{
         const computerHand = document.querySelector(".computer-hand");
 
         //computer options
-        const computerOptions = ['rock', 'paper', 'scissors'];
+        const computerOptions = ["rock", "paper", "scissors"];
 
         options.forEach(option=>{
-            option.addEventListener("click", ()=> {
+            option.addEventListener("click", function() {
                 //computer choice
                 const computerNumber = Math.floor(Math.random()*3);
                 const computerChoice = computerOptions[computerNumber];
 
                 //update images
                 playerHand.src = `./assets/${this.textContent}.png`;
-                computerHand.src = `./assets/${this.textContent}.png`;
+                computerHand.src = `./assets/${computerChoice}.png`;
             })
         })
         
