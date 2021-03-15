@@ -40,7 +40,7 @@ const game = ()=>{
                  //Handen verglijken
                  compareHands(this.textContent, computerChoice)
 
-                 //update images
+                 //update img handen
                  playerHand.src = `./assets/${this.textContent}.png`;
                  computerHand.src = `./assets/${computerChoice}.png`;
                }, 2000)
@@ -68,7 +68,8 @@ const game = ()=>{
             winner.textContent = 'Gelijkspel';
             return;
         }
-
+        
+        //Speler kiest Steen
         if(playerChoice === 'rock'){
             if(computerChoice === 'scissors'){
                 winner.textContent = 'Speler wint';
@@ -84,6 +85,7 @@ const game = ()=>{
             }
         }
 
+        //Speler kiest papier
         if(playerChoice === 'paper'){
             if(computerChoice === 'scissors'){
                 winner.textContent = 'Computer wint';
@@ -99,6 +101,7 @@ const game = ()=>{
             }
         }
 
+        //Speler kiest schaar
         if(playerChoice === 'scissors'){
             if(computerChoice === 'rock'){
                 winner.textContent = 'Computer wint';
@@ -114,11 +117,11 @@ const game = ()=>{
             }
         }
     }
-    //Is call all the inner function
+    //Functies voor starten spel aanroepen
     startGame();
     playMatch();
     
 };
 
-//start game function
+//Spel starten
 game();
