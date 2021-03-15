@@ -31,7 +31,7 @@ const game = ()=>{
 
                 //update images
                 playerHand.src = `./assets/${this.textContent}.png`;
-                computerHand.src =`./assets/${this.textContent}.png`;
+                computerHand.src = `./assets/${this.textContent}.png`;
             })
         })
         
