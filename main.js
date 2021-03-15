@@ -117,9 +117,24 @@ const game = ()=>{
             }
         }
     }
+    
+    const newGame = () =>{
+        const restartGame = document.querySelector(".newgame button")
+
+        restartGame.addEventListener("click", () =>{
+            alert("Het spel wordt opnieuw gestart!")
+            pScore = 0;
+            cScore = 0;
+            updateScore();
+            return;
+        })
+    }
+    
+    
     //Functies voor starten spel aanroepen
     startGame();
     playMatch();
+    newGame();
     
 };
 
