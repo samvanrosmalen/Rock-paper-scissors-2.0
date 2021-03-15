@@ -41,7 +41,10 @@ const game = ()=>{
     }
 
     const updateScore = () =>{
-        
+        const playerScore = document.querySelector('.player-score p');
+        const computerScore = document.querySelector('.computer-score p');
+        playerScore.textContent = pScore;
+        computerScore.textContent = cScore;
     }
 
 
@@ -56,10 +59,14 @@ const game = ()=>{
         if(playerChoice === 'rock'){
             if(computerChoice === 'scissors'){
                 winner.textContent = 'Speler wint';
+                pScore++;
+                updateScore();
                 return;
             }
             else{
                 winner.textContent = 'Computer wint';
+                cScore++;
+                updateScore();
                 return;
             }
         }
@@ -67,10 +74,14 @@ const game = ()=>{
         if(playerChoice === 'paper'){
             if(computerChoice === 'scissors'){
                 winner.textContent = 'Computer wint';
+                cScore++;
+                updateScore();
                 return;
             }
             else{
                 winner.textContent = 'Speler wint';
+                pScore++;
+                updateScore();
                 return;
             }
         }
@@ -78,10 +89,14 @@ const game = ()=>{
         if(playerChoice === 'scissors'){
             if(computerChoice === 'rock'){
                 winner.textContent = 'Computer wint';
+                cScore++;
+                updateScore();
                 return;
             }
             else{
                 winner.textContent = 'Speler wint';
+                pScore++;
+                updateScore();
                 return;
             }
         }
