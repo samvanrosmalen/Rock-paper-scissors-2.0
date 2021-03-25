@@ -3,7 +3,7 @@ const game = ()=>{
     let pScore = 0;
     let cScore = 0;
     
-    //Start het spel
+    //Start spel functie aanmaken
     const startGame = () => {
         const playBtn = document.querySelector(".intro button");
         const introScreen = document.querySelector(".intro");
@@ -14,7 +14,7 @@ const game = ()=>{
             match.classList.add("fadeIn");
         });
     };
-    //begin spel
+    //begin spel functie maken
     const playMatch = () => {
         const options = document.querySelectorAll ('.options button');
         const playerHand = document.querySelector(".player-hand");
@@ -32,7 +32,7 @@ const game = ()=>{
 
         options.forEach(option=>{
             option.addEventListener("click", function() {
-                //Keuze van computer
+                //Keuze van computer uit 3 random getallen
                 const computerNumber = Math.floor(Math.random()*3);
                 const computerChoice = computerOptions[computerNumber];
 
@@ -117,12 +117,19 @@ const game = ()=>{
             }
         }
     }
-    
+    //de reset score funtie
     const newGame = () =>{
         const restartGame = document.querySelector(".newgame button")
+        const playerHand = document.querySelector(".player-hand");
+        const computerHand = document.querySelector(".computer-hand");
+        const winner = document.querySelector('.winner');
 
         restartGame.addEventListener("click", () =>{
-            alert("Het spel wordt opnieuw gestart!")
+
+            alert("De scores worden gereset!")
+            playerHand.src = `./assets/rock.png`;
+            computerHand.src = `./assets/rock.png`;
+            winner.textContent = 'Kies een optie'
             pScore = 0;
             cScore = 0;
             updateScore();

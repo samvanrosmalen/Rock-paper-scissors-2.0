@@ -78,6 +78,8 @@ section {
     transform: rotateY(180deg);
 }
 
+
+
 div.fadeOut{
     opacity: 0;
     pointer-events: none;
@@ -95,10 +97,7 @@ div.newgame{
     justify-content: space-around;
 }
 
-.newgame h1{
-    font-size: 50px;
-    color: white;
-}
+
 
 @keyframes shakePlayer{
     0%{
